@@ -169,3 +169,59 @@ enum DayNested {
 }
 
 var dayNested: DayNested = .weekDay(.monday)
+
+// Challenges
+
+/*
+ 1- Create a enumeration of cardinal points
+ 
+ 2 - Using the same previous enumeration add associated values, that will represent the number of steps to go on that direction.
+ 
+ 3 - Create an arraw of the previous enumeration, wich contains  the directions and number of steps one should make to cover a rectangle perimeter.
+ 
+ 4 - Add a method inside the enum that returns the number of steps associated.
+ 
+ 5 - Add a method that returns the string representation of the case
+ 
+ 6 - Finally create a method that will "read" every direction and number of steps of the previous array.
+ 
+ Think of an example where you would use an nested array
+ */
+
+
+enum CardinalPointsChallenge {
+    case north(Int)
+    case south(Int)
+    case east(Int)
+    case west(Int)
+    
+    func numberOfSteps() -> Int {
+        switch self {
+        case .north(let steps), .south( let steps), .east(let steps), .west(let steps):
+            return steps
+        }
+    }
+    
+    func stringCardinalPoint() -> String {
+        switch self {
+        case .north(_):
+            return "North"
+        case .south(_):
+            return "South"
+        case .west(_):
+            return "West"
+        case .east(_):
+            return "East"
+        }
+    }
+}
+
+var directions: [CardinalPointsChallenge] = [.north(10),.east(20), .south(10), .west(20)]
+
+func printDirections(directions: [CardinalPointsChallenge]) {
+    for direction in directions {
+        print("Go \(direction.numberOfSteps()) steps to \(direction.stringCardinalPoint())")
+    }
+}
+
+printDirections(directions: directions)
