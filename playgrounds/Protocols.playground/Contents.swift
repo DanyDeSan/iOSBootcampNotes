@@ -5,7 +5,7 @@ import UIKit
 // Reference
 // https://docs.swift.org/swift-book/LanguageGuide/Protocols.html
 
-// Here we declare a protocol
+// Here wCe declare a protocol
 protocol AProtocol {
     // 'get set' means that the variable should be gettable and settable. In short words, it must be a Variable
     var requiredVariable: Int { get set }
@@ -296,9 +296,7 @@ classB.askDelegateToDoSomething()
 """
     1. For the given struct, conform it to standard Equatable and Comparable protocol. So we can do the following
 
-animal1 == animal2
-animal1 > animal2
-animal1 < animal2
+P
 
     struct Animal {
         enum Species {

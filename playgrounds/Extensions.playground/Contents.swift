@@ -11,7 +11,10 @@ struct BankTransaction {
     var amount: Double
     var reference: Int
     var destinyAccount: Int
+    static var USDValue: Double = 20
 }
+
+BankTransaction.USDValue
 
 // Here we extend bank transaction struct
 extension BankTransaction {
@@ -69,6 +72,9 @@ extension PaymentEndpoint {
     
 }
 
+PaymentEndpoint.valueFor(endpoint: .cancel)
+
+
 
 class BaseClass {
     var attribute: Int?
@@ -97,6 +103,9 @@ extension Double {
     }
 }
 
+var amount: Double = 20
+print(amount.currencyFormat())
+
 extension Date {
     func formatted() -> String {
         let dateFormatter: DateFormatter = DateFormatter()
@@ -122,3 +131,60 @@ var currentDate: String = Date().formatted()
 // But also the true powers of extensions comes along with protocols....
 
 
+
+// Hacer qu un valor Double nos regrese su valor pero en cadena.
+
+extension Double {
+    var stringValue: String {
+        return "\(self)"
+    }
+}
+
+var aDouble: Double = 1.0
+print(aDouble.stringValue)
+
+// Que UIColor tenga predefinido un set de colores
+
+extension UIColor {
+    
+    static var cyan: UIColor {
+        return UIColor(red: 0, green: 1, blue: 1, alpha: 1.0)
+    }
+    
+    static var crimson: UIColor {
+        return UIColor(red: 220/225, green: 20/255, blue: 60/255, alpha: 1)
+    }
+}
+
+var cyan: UIColor = UIColor.cyan
+var crimson: UIColor = UIColor.crimson
+
+// Averiguar si una cadena es numérico o alfanumérico.
+
+extension String {
+    func isNumeric() -> Bool {
+        guard let _: Int = Int(self) else { return false }
+        return true
+    }
+    
+    func numericValue() -> Int {
+        return Int(self) ?? 0
+    }
+    
+}
+
+var myAge: String = "26"
+var anotherString: String = "12a"
+print(myAge.isNumeric())
+print(myAge.numericValue())
+print(anotherString.isNumeric())
+
+"""
+    Daphne - > Luis Jorge
+    Luis -> Mario
+    Saul -> Juan de Dios
+    Itzel -> Gis
+    Adry -> Jesus
+    Ham -> John
+    Marco -> Nery
+"""
