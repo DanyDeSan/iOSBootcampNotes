@@ -201,3 +201,69 @@ let iphone = iphoneStack.pop()
 // Referencia de las queue https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm
 //
 
+
+
+protocol CellPhone {}
+
+protocol Computer {}
+
+extension iPhone: CellPhone{}
+
+struct GooglePixel: Product, CellPhone {
+    
+    var description: String = "Google Pixel"
+    var debugDescription: String = "Google Pixel"
+    
+    var priceMXN: Double = 25_000
+}
+
+
+struct MacbookPro: Product, Computer {
+    var description: String = "MacBook Pro"
+    var debugDescription: String = "MacBook Pro"
+    var priceMXN: Double = 35_000
+}
+
+struct PCGamer: Product, Computer {
+    var description: String = "PC Gamer"
+    var debugDescription: String = "PC Gamer"
+    
+    var priceMXN: Double = 40_000
+}
+
+class CellPhoneSeller <C: CellPhone> {
+    var cellphoneStock: [C]
+    
+    init(stock: [C]) {
+        self.cellphoneStock = stock
+    }
+    
+    func buy(cellphone: C) {
+        cellphoneStock.append(cellphone)
+    }
+    
+    func sell() -> C {
+        return cellphoneStock.removeLast()
+    }
+}
+
+
+class ProductQueue <P: Product> {
+    var queue: [P] = [P]()
+    
+    func enqueue(product: P) {
+        queue.append(product)
+    }
+    
+    func dequeue() -> P {
+        return queue.removeFirst()
+    }
+    
+    func peek() -> P? {
+        return queue.first
+    }
+}
+
+var iphoneQueue: ProductQueue<iPhone> = ProductQueue<iPhone>()
+
+iphoneQueue.enqueue(product: iPhone())

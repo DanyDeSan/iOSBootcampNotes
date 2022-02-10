@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A368E7227B4BBA700DB2E3C /* SecondViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A368E7127B4BBA700DB2E3C /* SecondViewControllerDelegate.swift */; };
 		8A9E7ED527B334D20054D916 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E7ED427B334D20054D916 /* AppDelegate.swift */; };
 		8A9E7ED727B334D20054D916 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E7ED627B334D20054D916 /* SceneDelegate.swift */; };
 		8A9E7ED927B334D20054D916 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9E7ED827B334D20054D916 /* FirstViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A368E7127B4BBA700DB2E3C /* SecondViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8A9E7ED127B334D20054D916 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9E7ED427B334D20054D916 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A9E7ED627B334D20054D916 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				8A9E7ED627B334D20054D916 /* SceneDelegate.swift */,
 				8A9E7ED827B334D20054D916 /* FirstViewController.swift */,
 				8A9E7EE827B3362B0054D916 /* SecondViewController.swift */,
+				8A368E7127B4BBA700DB2E3C /* SecondViewControllerDelegate.swift */,
 				8A9E7EDA27B334D20054D916 /* Main.storyboard */,
 				8A9E7EDD27B334D30054D916 /* Assets.xcassets */,
 				8A9E7EDF27B334D30054D916 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A9E7EE927B3362B0054D916 /* SecondViewController.swift in Sources */,
+				8A368E7227B4BBA700DB2E3C /* SecondViewControllerDelegate.swift in Sources */,
 				8A9E7ED927B334D20054D916 /* FirstViewController.swift in Sources */,
 				8A9E7ED527B334D20054D916 /* AppDelegate.swift in Sources */,
 				8A9E7ED727B334D20054D916 /* SceneDelegate.swift in Sources */,
