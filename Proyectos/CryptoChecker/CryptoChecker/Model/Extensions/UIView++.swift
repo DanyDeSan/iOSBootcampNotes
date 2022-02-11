@@ -18,4 +18,8 @@ extension UIView {
     }
     
     static var padding: CGFloat = 3
+    
+    func applyBackgroundColor() {
+        self.backgroundColor = .white
+    }
 }

@@ -17,7 +17,7 @@ class ExchangeRateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.applyBackgroundColor()
         title = cryptoSelected?.abbreviation ?? "BTC"
         requestInfo()
     }

@@ -22,6 +22,7 @@ class CryptoViewController: UIViewController {
     func initUI() {
         title = Constants.currencyViewTitle
         view.addSubview(cryptoTableView)
+        view.applyBackgroundColor()
         cryptoTableView.pinToBorders(with: view)
         cryptoTableView.register(ReusableTableViewCell.self, forCellReuseIdentifier: ReusableTableViewCell.reuseIdentifier)
         cryptoTableView.delegate = self
