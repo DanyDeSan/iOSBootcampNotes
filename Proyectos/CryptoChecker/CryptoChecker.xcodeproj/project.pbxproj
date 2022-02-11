@@ -12,6 +12,11 @@
 		8A1868AE27B64D9000C12D0E /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1868AD27B64D9000C12D0E /* CryptoViewController.swift */; };
 		8A1868B327B64D9000C12D0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1868B227B64D9000C12D0E /* Assets.xcassets */; };
 		8A1868B627B64D9000C12D0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1868B427B64D9000C12D0E /* LaunchScreen.storyboard */; };
+		8A8F267527B6698200CD5C61 /* CurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267427B6698200CD5C61 /* CurrencyResponse.swift */; };
+		8A8F267827B6700000CD5C61 /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267727B6700000CD5C61 /* UIView++.swift */; };
+		8A8F267A27B6723D00CD5C61 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267927B6723D00CD5C61 /* APIDataManager.swift */; };
+		8A8F267C27B6728800CD5C61 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267B27B6728800CD5C61 /* Endpoint.swift */; };
+		8A8F267F27B677A600CD5C61 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267E27B677A600CD5C61 /* DataParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		8A1868B227B64D9000C12D0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A1868B527B64D9000C12D0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A1868B727B64D9000C12D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8F267427B6698200CD5C61 /* CurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyResponse.swift; sourceTree = "<group>"; };
+		8A8F267727B6700000CD5C61 /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
+		8A8F267927B6723D00CD5C61 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
+		8A8F267B27B6728800CD5C61 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8A8F267E27B677A600CD5C61 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,11 @@
 		8A8F267227B667E500CD5C61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8A8F267627B66FEE00CD5C61 /* Extensions */,
+				8A8F267427B6698200CD5C61 /* CurrencyResponse.swift */,
+				8A8F267927B6723D00CD5C61 /* APIDataManager.swift */,
+				8A8F267B27B6728800CD5C61 /* Endpoint.swift */,
+				8A8F267E27B677A600CD5C61 /* DataParser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -86,6 +101,14 @@
 				8A1868AD27B64D9000C12D0E /* CryptoViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A8F267627B66FEE00CD5C61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8A8F267727B6700000CD5C61 /* UIView++.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8F267C27B6728800CD5C61 /* Endpoint.swift in Sources */,
 				8A1868AE27B64D9000C12D0E /* CryptoViewController.swift in Sources */,
+				8A8F267F27B677A600CD5C61 /* DataParser.swift in Sources */,
 				8A1868AA27B64D9000C12D0E /* AppDelegate.swift in Sources */,
 				8A1868AC27B64D9000C12D0E /* SceneDelegate.swift in Sources */,
+				8A8F267827B6700000CD5C61 /* UIView++.swift in Sources */,
+				8A8F267A27B6723D00CD5C61 /* APIDataManager.swift in Sources */,
+				8A8F267527B6698200CD5C61 /* CurrencyResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
