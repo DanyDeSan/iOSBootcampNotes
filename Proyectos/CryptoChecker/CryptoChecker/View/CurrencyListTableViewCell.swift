@@ -17,7 +17,7 @@ class CurrencyListTableViewCell: UITableViewCell {
     var minSizeLabel: UILabel?
     
     
-    func initUI(currency: Currency) {
+    func initUI(model: TableViewCellVieable) {
         //Create labels
         
         self.nameLabel = UILabel()
@@ -35,8 +35,8 @@ class CurrencyListTableViewCell: UITableViewCell {
         minSizeLabel?.leftAnchor.constraint(equalTo: self.leftAnchor, constant: UIView.padding).isActive = true
         minSizeLabel?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -UIView.padding).isActive = true
         //Set Content of labels
-        nameLabel?.text = currency.name
-        minSizeLabel?.text = currency.minSize
+        nameLabel?.text = model.title
+        minSizeLabel?.text = model.subTitle
         //Configure labels
         nameLabel?.applyNameCurrencyLabel()
         minSizeLabel?.applyMinSizeCurrencyLabel()

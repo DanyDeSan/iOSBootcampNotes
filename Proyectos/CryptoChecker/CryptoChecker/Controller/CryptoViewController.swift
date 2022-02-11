@@ -10,14 +10,14 @@ import UIKit
 class CryptoViewController: UIViewController {
     
     lazy var cryptoTableView: UITableView = UITableView()
-    var currencies: [Currency]? = [Currency](repeating: Currency(id: "", name: "name", minSize: "size"), count: 10)
+    var availableCrypto: [Crypto] = [Crypto(name: "Bitcoin", abbreviation: "BTC"), Crypto(name: "Ethereum", abbreviation: "ETH"), Crypto(name: "Ripple", abbreviation: "XRT")]
     lazy var apiDataManager: APIDataManager<CurrencyListResponse> = APIDataManager<CurrencyListResponse>(endpoint: .currencies)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        makeNetworkCall()
+        //makeNetworkCall()
     }
     
     func initUI() {
@@ -30,19 +30,12 @@ class CryptoViewController: UIViewController {
         
     }
     
-    func makeNetworkCall() {
-        apiDataManager.performRequest { [weak self] currencyList in
-            self?.currencies = currencyList.data
-            self?.cryptoTableView.reloadData()
-        } onError: { error in
-            print(error)
-        }
-    }
-
 }
 
 extension CryptoViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension CryptoViewController: UITableViewDataSource {
@@ -52,7 +45,7 @@ extension CryptoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currencies?.count ?? 0
+        return availableCrypto.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -60,9 +53,11 @@ extension CryptoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: CurrencyListTableViewCell = tableView.dequeueReusableCell(withIdentifier: CurrencyListTableViewCell.reuseIdentifier, for: indexPath) as? CurrencyListTableViewCell,
-              let currency: Currency = currencies?[indexPath.row] else { return UITableViewCell() }
-        cell.initUI(currency: currency)
+        guard let cell: CurrencyListTableViewCell = tableView.dequeueReusableCell(withIdentifier: CurrencyListTableViewCell.reuseIdentifier, for: indexPath) as? CurrencyListTableViewCell else {
+            return UITableViewCell()
+        }
+        let currency: Crypto = availableCrypto[indexPath.row]
+        cell.initUI(model: currency)
         return cell
     }
 }
