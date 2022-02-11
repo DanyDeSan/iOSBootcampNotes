@@ -27,6 +27,7 @@ enum EndPoint {
         case .currencies:
             baseURL.path += "/currencies"
         case .exchange(currency: let currency):
+            baseURL.path += "/exchange-rates"
             let queryItem: URLQueryItem = URLQueryItem(name: "currency", value: currency)
             baseURL.queryItems = [queryItem]
         case .sell(frstCurrency: let frstCurrency, scndCurrency: let scndCurrency):

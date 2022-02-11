@@ -17,12 +17,15 @@
 		8A8F267A27B6723D00CD5C61 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267927B6723D00CD5C61 /* APIDataManager.swift */; };
 		8A8F267C27B6728800CD5C61 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267B27B6728800CD5C61 /* Endpoint.swift */; };
 		8A8F267F27B677A600CD5C61 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267E27B677A600CD5C61 /* DataParser.swift */; };
-		8AE858F827B6E38100BC1122 /* CurrencyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858F727B6E38100BC1122 /* CurrencyListTableViewCell.swift */; };
+		8AE858F827B6E38100BC1122 /* ResuableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858F727B6E38100BC1122 /* ResuableCell.swift */; };
 		8AE858FA27B6EB8200BC1122 /* UILabel++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858F927B6EB8200BC1122 /* UILabel++.swift */; };
 		8AE858FC27B6EBA500BC1122 /* UIColor++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858FB27B6EBA500BC1122 /* UIColor++.swift */; };
 		8AE8590127B6EF1100BC1122 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8590027B6EF1100BC1122 /* Constants.swift */; };
 		8AE8590327B6F13D00BC1122 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8590227B6F13D00BC1122 /* CryptoModel.swift */; };
 		8AE8590627B6F1A800BC1122 /* TableViewCellVieable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8590527B6F1A800BC1122 /* TableViewCellVieable.swift */; };
+		8AE8590827B6F51C00BC1122 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8590727B6F51C00BC1122 /* ExchangeRateViewController.swift */; };
+		8AE8590A27B6F8E100BC1122 /* ExchangeRatesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8590927B6F8E100BC1122 /* ExchangeRatesResponse.swift */; };
+		8AE8590C27B6FA4300BC1122 /* ExchangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8590B27B6FA4300BC1122 /* ExchangeRateModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +41,15 @@
 		8A8F267927B6723D00CD5C61 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
 		8A8F267B27B6728800CD5C61 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8A8F267E27B677A600CD5C61 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
-		8AE858F727B6E38100BC1122 /* CurrencyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListTableViewCell.swift; sourceTree = "<group>"; };
+		8AE858F727B6E38100BC1122 /* ResuableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuableCell.swift; sourceTree = "<group>"; };
 		8AE858F927B6EB8200BC1122 /* UILabel++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel++.swift"; sourceTree = "<group>"; };
 		8AE858FB27B6EBA500BC1122 /* UIColor++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor++.swift"; sourceTree = "<group>"; };
 		8AE8590027B6EF1100BC1122 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8AE8590227B6F13D00BC1122 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		8AE8590527B6F1A800BC1122 /* TableViewCellVieable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellVieable.swift; sourceTree = "<group>"; };
+		8AE8590727B6F51C00BC1122 /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
+		8AE8590927B6F8E100BC1122 /* ExchangeRatesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesResponse.swift; sourceTree = "<group>"; };
+		8AE8590B27B6FA4300BC1122 /* ExchangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +97,7 @@
 		8A8F267127B667DA00CD5C61 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8AE858F727B6E38100BC1122 /* CurrencyListTableViewCell.swift */,
+				8AE858F727B6E38100BC1122 /* ResuableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +111,7 @@
 				8AE858FD27B6EC9F00BC1122 /* Responses */,
 				8AE858FE27B6ECBD00BC1122 /* Networking */,
 				8AE8590227B6F13D00BC1122 /* CryptoModel.swift */,
+				8AE8590B27B6FA4300BC1122 /* ExchangeRateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				8A1868AD27B64D9000C12D0E /* CryptoViewController.swift */,
+				8AE8590727B6F51C00BC1122 /* ExchangeRateViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8A8F267427B6698200CD5C61 /* CurrencyResponse.swift */,
+				8AE8590927B6F8E100BC1122 /* ExchangeRatesResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -234,9 +243,12 @@
 				8AE858FA27B6EB8200BC1122 /* UILabel++.swift in Sources */,
 				8A8F267C27B6728800CD5C61 /* Endpoint.swift in Sources */,
 				8AE8590627B6F1A800BC1122 /* TableViewCellVieable.swift in Sources */,
-				8AE858F827B6E38100BC1122 /* CurrencyListTableViewCell.swift in Sources */,
+				8AE858F827B6E38100BC1122 /* ResuableCell.swift in Sources */,
 				8A1868AE27B64D9000C12D0E /* CryptoViewController.swift in Sources */,
 				8A8F267F27B677A600CD5C61 /* DataParser.swift in Sources */,
+				8AE8590C27B6FA4300BC1122 /* ExchangeRateModel.swift in Sources */,
+				8AE8590827B6F51C00BC1122 /* ExchangeRateViewController.swift in Sources */,
+				8AE8590A27B6F8E100BC1122 /* ExchangeRatesResponse.swift in Sources */,
 				8A1868AA27B64D9000C12D0E /* AppDelegate.swift in Sources */,
 				8A1868AC27B64D9000C12D0E /* SceneDelegate.swift in Sources */,
 				8A8F267827B6700000CD5C61 /* UIView++.swift in Sources */,

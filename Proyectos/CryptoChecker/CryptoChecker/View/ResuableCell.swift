@@ -8,7 +8,7 @@
 import UIKit
 
 //MARK: - class CurrencyListTableViewCell
-class CurrencyListTableViewCell: UITableViewCell {
+class ReusableTableViewCell: UITableViewCell {
     
     static var reuseIdentifier: String = "CurrencyListTableViewCell"
     

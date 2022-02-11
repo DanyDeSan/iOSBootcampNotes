@@ -28,13 +28,20 @@ class APIDataManager<DataExpected: Codable> {
 
         dataTask = urlSession.dataTask(with: completeEndpointURL, completionHandler: { [weak self] responseData, urlResponse, error in
             if let error = error {
-                onError(error)
+                DispatchQueue.main.async {
+                    onError(error)
+                }
                 return
             }
             guard let data: Data = responseData,
                   let response: HTTPURLResponse = urlResponse as? HTTPURLResponse,
                   response.statusCode == 200,
-                  let parsedData: DataExpected = self?.dataParser.parseData(data: data) else { return }
+                  let parsedData: DataExpected = self?.dataParser.parseData(data: data) else {
+                      DispatchQueue.main.async {
+                          onError(error)
+                      }
+                      return
+                  }
             DispatchQueue.main.async {
                 completion(parsedData)
             }
