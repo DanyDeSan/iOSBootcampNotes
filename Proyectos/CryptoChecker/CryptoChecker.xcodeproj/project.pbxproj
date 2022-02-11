@@ -20,6 +20,7 @@
 		8AE858F827B6E38100BC1122 /* CurrencyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858F727B6E38100BC1122 /* CurrencyListTableViewCell.swift */; };
 		8AE858FA27B6EB8200BC1122 /* UILabel++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858F927B6EB8200BC1122 /* UILabel++.swift */; };
 		8AE858FC27B6EBA500BC1122 /* UIColor++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858FB27B6EBA500BC1122 /* UIColor++.swift */; };
+		8AE8590127B6EF1100BC1122 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8590027B6EF1100BC1122 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8AE858F727B6E38100BC1122 /* CurrencyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListTableViewCell.swift; sourceTree = "<group>"; };
 		8AE858F927B6EB8200BC1122 /* UILabel++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel++.swift"; sourceTree = "<group>"; };
 		8AE858FB27B6EBA500BC1122 /* UIColor++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor++.swift"; sourceTree = "<group>"; };
+		8AE8590027B6EF1100BC1122 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		8A8F267227B667E500CD5C61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8AE858FF27B6EF0400BC1122 /* Constants */,
 				8A8F267627B66FEE00CD5C61 /* Extensions */,
 				8AE858FD27B6EC9F00BC1122 /* Responses */,
 				8AE858FE27B6ECBD00BC1122 /* Networking */,
@@ -134,6 +137,14 @@
 				8A8F267B27B6728800CD5C61 /* Endpoint.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		8AE858FF27B6EF0400BC1122 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8AE8590027B6EF1100BC1122 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 				8AE858FC27B6EBA500BC1122 /* UIColor++.swift in Sources */,
 				8A8F267A27B6723D00CD5C61 /* APIDataManager.swift in Sources */,
 				8A8F267527B6698200CD5C61 /* CurrencyResponse.swift in Sources */,
+				8AE8590127B6EF1100BC1122 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
