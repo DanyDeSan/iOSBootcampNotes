@@ -24,6 +24,7 @@ class CryptoViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(cryptoTableView)
         cryptoTableView.pinToBorders(with: view)
+        cryptoTableView.register(CurrencyListTableViewCell.self, forCellReuseIdentifier: CurrencyListTableViewCell.reuseIdentifier)
         cryptoTableView.delegate = self
         cryptoTableView.dataSource = self
         
@@ -54,10 +55,14 @@ extension CryptoViewController: UITableViewDataSource {
         return currencies?.count ?? 0
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.bounds.height * 0.1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let currencies: [Currency] = self.currencies else { return UITableViewCell() }
-        let cell: UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = currencies[indexPath.row].name
+        guard let cell: CurrencyListTableViewCell = tableView.dequeueReusableCell(withIdentifier: CurrencyListTableViewCell.reuseIdentifier, for: indexPath) as? CurrencyListTableViewCell,
+              let currency: Currency = currencies?[indexPath.row] else { return UITableViewCell() }
+        cell.initUI(currency: currency)
         return cell
     }
 }
