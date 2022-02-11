@@ -9,10 +9,15 @@ import UIKit
 
 class CryptoViewController: UIViewController {
     
-    var collectionView: UICollectionView?
+    var cryptoTableView: UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initUI()
+        print("Ready!")
+    }
+    
+    func initUI() {
         
     }
 }

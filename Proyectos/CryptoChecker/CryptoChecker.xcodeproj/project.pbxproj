@@ -56,12 +56,36 @@
 			children = (
 				8A1868A927B64D9000C12D0E /* AppDelegate.swift */,
 				8A1868AB27B64D9000C12D0E /* SceneDelegate.swift */,
-				8A1868AD27B64D9000C12D0E /* CryptoViewController.swift */,
+				8A8F267227B667E500CD5C61 /* Model */,
+				8A8F267127B667DA00CD5C61 /* View */,
+				8A8F267327B667F400CD5C61 /* Controller */,
 				8A1868B227B64D9000C12D0E /* Assets.xcassets */,
 				8A1868B427B64D9000C12D0E /* LaunchScreen.storyboard */,
 				8A1868B727B64D9000C12D0E /* Info.plist */,
 			);
 			path = CryptoChecker;
+			sourceTree = "<group>";
+		};
+		8A8F267127B667DA00CD5C61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A8F267227B667E500CD5C61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A8F267327B667F400CD5C61 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A1868AD27B64D9000C12D0E /* CryptoViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
