@@ -17,41 +17,21 @@ class ExchangeRateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = cryptoSelected?.abbreviation ?? "BTC"
-        requestInfo()
     }
     
     func requestInfo() {
-        initActivityView()
-        apiDataManager = APIDataManager<ExchangeRateURLResponse>(endpoint: .exchange(currency: cryptoSelected?.abbreviation ?? "BTC"))
-        apiDataManager?.performRequest(completion: { [weak self] response in
-            self?.exchangeData = ExchangeRateModel.createFromResponseModel(response.data)
-            self?.removeActivityView()
-            self?.initUI()
-            
-        }, onError: {[weak self] error  in
-            print(error)
-            self?.removeActivityView()
-        })
+        
     }
     
     func initActivityView() {
-        view.addSubview(activityIndicator)
-        activityIndicator.pinToBorders(with: view)
-        activityIndicator.startAnimating()
+        
     }
     
     func removeActivityView() {
-        activityIndicator.stopAnimating()
-        activityIndicator.removeFromSuperview()
+        
     }
     func initUI() {
-        view.addSubview(exchangesTableView)
-        exchangesTableView.pinToBorders(with: view)
-        exchangesTableView.register(ReusableTableViewCell.self, forCellReuseIdentifier: ReusableTableViewCell.reuseIdentifier)
-        exchangesTableView.delegate = self
-        exchangesTableView.dataSource = self
+        
         
     }
 }
@@ -69,16 +49,10 @@ extension ExchangeRateViewController: UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exchangeData?.count ?? 0
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let viewCell: ReusableTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReusableTableViewCell.reuseIdentifier, for: indexPath) as? ReusableTableViewCell,
-              let exchangeRate: ExchangeRateModel = exchangeData?[indexPath.row] else {
-            return UITableViewCell()
-        }
-
-        viewCell.initUI(model: exchangeRate)
-        return viewCell
+        return UITableViewCell()
     }
 }

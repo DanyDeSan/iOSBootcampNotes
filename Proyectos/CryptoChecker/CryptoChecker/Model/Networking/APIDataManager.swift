@@ -20,32 +20,5 @@ class APIDataManager<DataExpected: Codable> {
     }
     
     func performRequest(completion: @escaping (DataExpected) -> Void, onError: @escaping (Error?) -> Void) {
-        guard let completeEndpointURL: URL = endpoint.completeURL else {
-            onError(nil)
-            return
-        }
-        dataTask?.cancel()
-
-        dataTask = urlSession.dataTask(with: completeEndpointURL, completionHandler: { [weak self] responseData, urlResponse, error in
-            if let error = error {
-                DispatchQueue.main.async {
-                    onError(error)
-                }
-                return
-            }
-            guard let data: Data = responseData,
-                  let response: HTTPURLResponse = urlResponse as? HTTPURLResponse,
-                  response.statusCode == 200,
-                  let parsedData: DataExpected = self?.dataParser.parseData(data: data) else {
-                      DispatchQueue.main.async {
-                          onError(error)
-                      }
-                      return
-                  }
-            DispatchQueue.main.async {
-                completion(parsedData)
-            }
-        })
-        dataTask?.resume()
     }
 }

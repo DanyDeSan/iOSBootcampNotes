@@ -8,6 +8,5 @@
 import Foundation
 
 protocol TableViewCellVieable {
-    var title: String { get }
-    var subTitle: String { get }
+    
 }

@@ -10,12 +10,12 @@ import UIKit
 extension UIView {
     
     func pinToBorders(with view: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
-        topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
     }
     
     static var padding: CGFloat = 3
+    
+    func applyBackgroundColor() {
+        self.backgroundColor = .white
+    }
 }

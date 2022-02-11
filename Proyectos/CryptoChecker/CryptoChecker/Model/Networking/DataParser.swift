@@ -10,12 +10,6 @@ import Foundation
 class DataParser<DataExpected: Codable> {
     lazy var decoder: JSONDecoder = JSONDecoder()
     func parseData(data: Data) -> DataExpected? {
-        do {
-            let dataDecoded: DataExpected = try decoder.decode(DataExpected.self, from: data)
-            return dataDecoded
-        } catch {
-            print(error)
-            return nil
-        }
+        nil
     }
 }

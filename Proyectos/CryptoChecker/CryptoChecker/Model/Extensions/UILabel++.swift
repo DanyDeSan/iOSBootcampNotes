@@ -11,11 +11,4 @@ import UIKit
 
 extension UILabel {
     
-    func applyNameCurrencyLabel() {
-        textColor = UIColor.greenCurrency
-    }
-    
-    func applyMinSizeCurrencyLabel() {
-        textColor = UIColor.redCurrency
-    }
 }

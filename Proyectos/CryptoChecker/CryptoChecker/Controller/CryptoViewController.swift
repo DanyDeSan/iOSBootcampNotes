@@ -20,23 +20,14 @@ class CryptoViewController: UIViewController {
     }
     
     func initUI() {
-        title = Constants.currencyViewTitle
-        view.addSubview(cryptoTableView)
-        cryptoTableView.pinToBorders(with: view)
-        cryptoTableView.register(ReusableTableViewCell.self, forCellReuseIdentifier: ReusableTableViewCell.reuseIdentifier)
-        cryptoTableView.delegate = self
-        cryptoTableView.dataSource = self
+        
     }
     
 }
 
 extension CryptoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let crypto: Crypto = availableCrypto[indexPath.row]
-        let nextViewController = ExchangeRateViewController()
-        nextViewController.cryptoSelected = crypto
-        navigationController?.pushViewController(nextViewController, animated: true)
+        
     }
 }
 
@@ -47,7 +38,7 @@ extension CryptoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return availableCrypto.count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,11 +46,6 @@ extension CryptoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: ReusableTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReusableTableViewCell.reuseIdentifier, for: indexPath) as? ReusableTableViewCell else {
-            return UITableViewCell()
-        }
-        let currency: Crypto = availableCrypto[indexPath.row]
-        cell.initUI(model: currency)
-        return cell
+        return UITableViewCell()
     }
 }
