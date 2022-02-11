@@ -17,7 +17,6 @@ class CryptoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        //makeNetworkCall()
     }
     
     func initUI() {
@@ -33,8 +32,10 @@ class CryptoViewController: UIViewController {
 
 extension CryptoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let crypto: Crypto = availableCrypto[indexPath.row]
         let nextViewController = ExchangeRateViewController()
+        nextViewController.cryptoSelected = crypto
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
