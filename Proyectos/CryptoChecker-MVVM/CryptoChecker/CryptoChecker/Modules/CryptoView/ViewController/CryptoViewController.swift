@@ -11,13 +11,16 @@ class CryptoViewController: UIViewController {
     // Declarando una variable lazy, solo se crea cuando se usa.
     lazy var cryptoTableView: UITableView = UITableView()
     
-    var availableCrypto: [Crypto] = [Crypto(name: "Bitcoin", abbreviation: "BTC"), Crypto(name: "Ethereum", abbreviation: "ETH"), Crypto(name: "Ripple", abbreviation: "XRT")]
     lazy var apiDataManager: APIDataManager<CurrencyListResponse> = APIDataManager<CurrencyListResponse>(endpoint: .currencies)
+    
+    private lazy var viewModel: CryptoViewModelProtocol = CryptoViewModel(localDataManager: CryptoViewLocalDataManager())
+    private var availableCrypto: [Crypto] = [Crypto]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        initViewModel()
     }
     
     func initUI() {
@@ -34,6 +37,13 @@ class CryptoViewController: UIViewController {
         self.cryptoTableView.register(ReusableTableViewCell.self, forCellReuseIdentifier: ReusableTableViewCell.reuseIdentifier)
     }
     
+    func initViewModel() {
+        viewModel.cryptoDataSource.valueChanged = { [weak self] cryptoDataSource in
+            self?.availableCrypto = cryptoDataSource ?? []
+            self?.cryptoTableView.reloadData()
+        }
+        viewModel.obtainAvailableCryptos()
+    }
 }
 
 extension CryptoViewController: UITableViewDelegate {

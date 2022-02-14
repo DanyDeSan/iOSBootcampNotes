@@ -15,6 +15,8 @@
 		8A5F058227BACFB30015DC82 /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F058127BACFB30015DC82 /* CryptoViewModel.swift */; };
 		8A5F058427BACFC20015DC82 /* ExchangeRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F058327BACFC20015DC82 /* ExchangeRateViewModel.swift */; };
 		8A5F058727BAD03E0015DC82 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F058627BAD03E0015DC82 /* Observable.swift */; };
+		8A5F059227BAEE830015DC82 /* CryptoViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F059127BAEE830015DC82 /* CryptoViewProtocols.swift */; };
+		8A5F059627BAF0D20015DC82 /* CryptoViewLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F059527BAF0D20015DC82 /* CryptoViewLocalDataManager.swift */; };
 		8A8F267527B6698200CD5C61 /* CurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267427B6698200CD5C61 /* CurrencyResponse.swift */; };
 		8A8F267827B6700000CD5C61 /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267727B6700000CD5C61 /* UIView++.swift */; };
 		8A8F267A27B6723D00CD5C61 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267927B6723D00CD5C61 /* APIDataManager.swift */; };
@@ -42,6 +44,8 @@
 		8A5F058127BACFB30015DC82 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
 		8A5F058327BACFC20015DC82 /* ExchangeRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewModel.swift; sourceTree = "<group>"; };
 		8A5F058627BAD03E0015DC82 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		8A5F059127BAEE830015DC82 /* CryptoViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewProtocols.swift; sourceTree = "<group>"; };
+		8A5F059527BAF0D20015DC82 /* CryptoViewLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewLocalDataManager.swift; sourceTree = "<group>"; };
 		8A8F267427B6698200CD5C61 /* CurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyResponse.swift; sourceTree = "<group>"; };
 		8A8F267727B6700000CD5C61 /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
 		8A8F267927B6723D00CD5C61 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				8A5F058F27BAED4F0015DC82 /* Protocols */,
+				8A5F059427BAF0AA0015DC82 /* LocalDataManager */,
 				8A5F058E27BAED460015DC82 /* ViewController */,
 				8A5F058D27BAED3C0015DC82 /* ViewModel */,
 			);
@@ -165,6 +170,7 @@
 		8A5F058F27BAED4F0015DC82 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				8A5F059127BAEE830015DC82 /* CryptoViewProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -174,6 +180,14 @@
 			children = (
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8A5F059427BAF0AA0015DC82 /* LocalDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8A5F059527BAF0D20015DC82 /* CryptoViewLocalDataManager.swift */,
+			);
+			path = LocalDataManager;
 			sourceTree = "<group>";
 		};
 		8A8F267127B667DA00CD5C61 /* ResulableView */ = {
@@ -327,6 +341,7 @@
 				8AE858F827B6E38100BC1122 /* ResuableCell.swift in Sources */,
 				8A1868AE27B64D9000C12D0E /* CryptoViewController.swift in Sources */,
 				8A5F058227BACFB30015DC82 /* CryptoViewModel.swift in Sources */,
+				8A5F059227BAEE830015DC82 /* CryptoViewProtocols.swift in Sources */,
 				8A8F267F27B677A600CD5C61 /* DataParser.swift in Sources */,
 				8AE8590C27B6FA4300BC1122 /* ExchangeRateModel.swift in Sources */,
 				8AE8590827B6F51C00BC1122 /* ExchangeRateViewController.swift in Sources */,
@@ -340,6 +355,7 @@
 				8A5F058727BAD03E0015DC82 /* Observable.swift in Sources */,
 				8A8F267A27B6723D00CD5C61 /* APIDataManager.swift in Sources */,
 				8A8F267527B6698200CD5C61 /* CurrencyResponse.swift in Sources */,
+				8A5F059627BAF0D20015DC82 /* CryptoViewLocalDataManager.swift in Sources */,
 				8AE8590127B6EF1100BC1122 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
