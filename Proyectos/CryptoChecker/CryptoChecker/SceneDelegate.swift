@@ -16,8 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = scene
+        // Creo un navigation controller con CryptoViewController() como
+        // controller inicial.
         let mainNavigationController = UINavigationController(rootViewController: CryptoViewController())
-        
+        // Designo como controller inicial de la app el navigation controller
         window?.rootViewController = mainNavigationController
         window?.makeKeyAndVisible()
     }

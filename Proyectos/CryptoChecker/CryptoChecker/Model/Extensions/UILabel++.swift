@@ -10,5 +10,11 @@ import UIKit
 
 
 extension UILabel {
+    func applyGreenStyle() {
+        self.textColor = UIColor.greenCurrency
+    }
     
+    func applyRedStyle() {
+        self.textColor = UIColor.redCurrency
+    }
 }

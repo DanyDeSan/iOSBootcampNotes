@@ -23,7 +23,7 @@ extension ExchangeRateModel: TableViewCellVieable {
     var title: String {
         return currency
     }    
-    var subTitle: String {
+    var subtitle: String {
         return value
     }
     

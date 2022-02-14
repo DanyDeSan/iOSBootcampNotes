@@ -16,7 +16,7 @@ extension Crypto: TableViewCellVieable {
     var title: String {
         return name
     }
-    var subTitle: String {
+    var subtitle: String {
         return abbreviation
     }
 }
