@@ -12,6 +12,7 @@ enum Route {
     case exchangeView(crypto: Crypto)
     case alert(title: String, message: String?)
     case newItemAlert(title: String, observer: Observable<Crypto>, buttonHandler: () -> Void)
+    case sellBuy(firstCurrency: String, secondCurrency: String)
     case none
     
     var viewController: UIViewController? {
@@ -22,6 +23,8 @@ enum Route {
             return instantiateAlertView(title: title, message: message)
         case .newItemAlert(title: let title, let observer, let handler):
             return instantiateNewItemAlert(title: title, observer: observer, buttonHandler: handler)
+        case .sellBuy(firstCurrency: let firstCurrency, secondCurrency: let secondCurrency):
+            return instantiateSellBuyModule(firstCurrency: firstCurrency, secondCurrency: secondCurrency)
         case .none:
             return nil
         }
@@ -58,5 +61,12 @@ enum Route {
         
         alertController.addAction(acceptAction)
         return alertController
+    }
+    
+    private func instantiateSellBuyModule(firstCurrency: String, secondCurrency: String) -> UIViewController {
+        let viewController: BuySellViewController = BuySellViewController()
+        let buySellViewModel: BuySellViewModel = BuySellViewModel(crypto: firstCurrency, secondCurrency: secondCurrency)
+        viewController.viewModel = buySellViewModel
+        return viewController
     }
 }

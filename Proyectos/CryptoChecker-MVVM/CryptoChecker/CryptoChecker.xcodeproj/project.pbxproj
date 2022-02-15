@@ -18,6 +18,12 @@
 		8A5F059227BAEE830015DC82 /* CryptoViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F059127BAEE830015DC82 /* CryptoViewProtocols.swift */; };
 		8A5F059627BAF0D20015DC82 /* CryptoViewLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F059527BAF0D20015DC82 /* CryptoViewLocalDataManager.swift */; };
 		8A5F059827BB0BFC0015DC82 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F059727BB0BFC0015DC82 /* Route.swift */; };
+		8A73509627BB9A5600A022C7 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A73509527BB9A5500A022C7 /* RateView.swift */; };
+		8A73509827BB9ABE00A022C7 /* RateViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A73509727BB9ABE00A022C7 /* RateViewable.swift */; };
+		8A73509D27BBA0F100A022C7 /* BuySellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A73509C27BBA0F100A022C7 /* BuySellViewController.swift */; };
+		8A73509F27BBA10A00A022C7 /* BuySellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A73509E27BBA10A00A022C7 /* BuySellViewModel.swift */; };
+		8A7350A127BBA1EF00A022C7 /* SellBuyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7350A027BBA1EF00A022C7 /* SellBuyResponse.swift */; };
+		8A7350A427BBA38A00A022C7 /* SellBuyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7350A327BBA38A00A022C7 /* SellBuyModel.swift */; };
 		8A8F267527B6698200CD5C61 /* CurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267427B6698200CD5C61 /* CurrencyResponse.swift */; };
 		8A8F267827B6700000CD5C61 /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267727B6700000CD5C61 /* UIView++.swift */; };
 		8A8F267A27B6723D00CD5C61 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267927B6723D00CD5C61 /* APIDataManager.swift */; };
@@ -48,6 +54,12 @@
 		8A5F059127BAEE830015DC82 /* CryptoViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewProtocols.swift; sourceTree = "<group>"; };
 		8A5F059527BAF0D20015DC82 /* CryptoViewLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewLocalDataManager.swift; sourceTree = "<group>"; };
 		8A5F059727BB0BFC0015DC82 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		8A73509527BB9A5500A022C7 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
+		8A73509727BB9ABE00A022C7 /* RateViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewable.swift; sourceTree = "<group>"; };
+		8A73509C27BBA0F100A022C7 /* BuySellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellViewController.swift; sourceTree = "<group>"; };
+		8A73509E27BBA10A00A022C7 /* BuySellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellViewModel.swift; sourceTree = "<group>"; };
+		8A7350A027BBA1EF00A022C7 /* SellBuyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellBuyResponse.swift; sourceTree = "<group>"; };
+		8A7350A327BBA38A00A022C7 /* SellBuyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellBuyModel.swift; sourceTree = "<group>"; };
 		8A8F267427B6698200CD5C61 /* CurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyResponse.swift; sourceTree = "<group>"; };
 		8A8F267727B6700000CD5C61 /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
 		8A8F267927B6723D00CD5C61 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
@@ -98,7 +110,7 @@
 				8A1868A927B64D9000C12D0E /* AppDelegate.swift */,
 				8A1868AB27B64D9000C12D0E /* SceneDelegate.swift */,
 				8A5F058527BACFD00015DC82 /* Helpers */,
-				8A8F267227B667E500CD5C61 /* Model */,
+				8A8F267227B667E500CD5C61 /* Model Layer */,
 				8A8F267127B667DA00CD5C61 /* ResulableView */,
 				8A1868B227B64D9000C12D0E /* Assets.xcassets */,
 				8A1868B427B64D9000C12D0E /* LaunchScreen.storyboard */,
@@ -148,6 +160,7 @@
 		8A5F058C27BAED310015DC82 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8A73509927BBA08D00A022C7 /* BuySellView */,
 				8A5F058A27BAED160015DC82 /* ExchangeRate */,
 				8A5F058927BAED0F0015DC82 /* CryptoView */,
 			);
@@ -193,15 +206,51 @@
 			path = LocalDataManager;
 			sourceTree = "<group>";
 		};
+		8A73509927BBA08D00A022C7 /* BuySellView */ = {
+			isa = PBXGroup;
+			children = (
+				8A73509B27BBA0B200A022C7 /* ViewModel */,
+				8A73509A27BBA0AC00A022C7 /* ViewController */,
+			);
+			path = BuySellView;
+			sourceTree = "<group>";
+		};
+		8A73509A27BBA0AC00A022C7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A73509C27BBA0F100A022C7 /* BuySellViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8A73509B27BBA0B200A022C7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8A73509E27BBA10A00A022C7 /* BuySellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8A7350A527BC2C5700A022C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8AE8590227B6F13D00BC1122 /* CryptoModel.swift */,
+				8AE8590B27B6FA4300BC1122 /* ExchangeRateModel.swift */,
+				8A7350A327BBA38A00A022C7 /* SellBuyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8A8F267127B667DA00CD5C61 /* ResulableView */ = {
 			isa = PBXGroup;
 			children = (
 				8AE858F727B6E38100BC1122 /* ResuableCell.swift */,
+				8A73509527BB9A5500A022C7 /* RateView.swift */,
 			);
 			path = ResulableView;
 			sourceTree = "<group>";
 		};
-		8A8F267227B667E500CD5C61 /* Model */ = {
+		8A8F267227B667E500CD5C61 /* Model Layer */ = {
 			isa = PBXGroup;
 			children = (
 				8AE8590427B6F19400BC1122 /* Protocols */,
@@ -209,10 +258,9 @@
 				8A8F267627B66FEE00CD5C61 /* Extensions */,
 				8AE858FD27B6EC9F00BC1122 /* Responses */,
 				8AE858FE27B6ECBD00BC1122 /* Networking */,
-				8AE8590227B6F13D00BC1122 /* CryptoModel.swift */,
-				8AE8590B27B6FA4300BC1122 /* ExchangeRateModel.swift */,
+				8A7350A527BC2C5700A022C7 /* Models */,
 			);
-			path = Model;
+			path = "Model Layer";
 			sourceTree = "<group>";
 		};
 		8A8F267327B667F400CD5C61 /* Controller */ = {
@@ -238,6 +286,7 @@
 			children = (
 				8A8F267427B6698200CD5C61 /* CurrencyResponse.swift */,
 				8AE8590927B6F8E100BC1122 /* ExchangeRatesResponse.swift */,
+				8A7350A027BBA1EF00A022C7 /* SellBuyResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -264,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				8AE8590527B6F1A800BC1122 /* TableViewCellVieable.swift */,
+				8A73509727BB9ABE00A022C7 /* RateViewable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -340,17 +390,23 @@
 			files = (
 				8AE858FA27B6EB8200BC1122 /* UILabel++.swift in Sources */,
 				8A8F267C27B6728800CD5C61 /* Endpoint.swift in Sources */,
+				8A7350A427BBA38A00A022C7 /* SellBuyModel.swift in Sources */,
 				8AE8590627B6F1A800BC1122 /* TableViewCellVieable.swift in Sources */,
 				8AE858F827B6E38100BC1122 /* ResuableCell.swift in Sources */,
 				8A1868AE27B64D9000C12D0E /* CryptoViewController.swift in Sources */,
 				8A5F058227BACFB30015DC82 /* CryptoViewModel.swift in Sources */,
 				8A5F059227BAEE830015DC82 /* CryptoViewProtocols.swift in Sources */,
 				8A8F267F27B677A600CD5C61 /* DataParser.swift in Sources */,
+				8A7350A127BBA1EF00A022C7 /* SellBuyResponse.swift in Sources */,
+				8A73509627BB9A5600A022C7 /* RateView.swift in Sources */,
 				8AE8590C27B6FA4300BC1122 /* ExchangeRateModel.swift in Sources */,
+				8A73509F27BBA10A00A022C7 /* BuySellViewModel.swift in Sources */,
 				8A5F059827BB0BFC0015DC82 /* Route.swift in Sources */,
+				8A73509D27BBA0F100A022C7 /* BuySellViewController.swift in Sources */,
 				8AE8590827B6F51C00BC1122 /* ExchangeRateViewController.swift in Sources */,
 				8AE8590A27B6F8E100BC1122 /* ExchangeRatesResponse.swift in Sources */,
 				8A1868AA27B64D9000C12D0E /* AppDelegate.swift in Sources */,
+				8A73509827BB9ABE00A022C7 /* RateViewable.swift in Sources */,
 				8A5F058427BACFC20015DC82 /* ExchangeRateViewModel.swift in Sources */,
 				8A1868AC27B64D9000C12D0E /* SceneDelegate.swift in Sources */,
 				8A8F267827B6700000CD5C61 /* UIView++.swift in Sources */,

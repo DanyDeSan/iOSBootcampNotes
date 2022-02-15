@@ -11,6 +11,7 @@ import UIKit
 extension UIColor {
     static var greenCurrency: UIColor = UIColor(hex: 0x337357, alpha: 1)
     static var redCurrency: UIColor = UIColor(hex: 0xE83151, alpha: 1)
+    static var softGray: UIColor = UIColor(hex: 0xE4E4E2, alpha: 1)
     
     convenience init(hex: Int, alpha: CGFloat) {
         let red: Int = (hex >> 16) & 0xFF

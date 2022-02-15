@@ -31,10 +31,10 @@ enum EndPoint {
             let queryItem: URLQueryItem = URLQueryItem(name: "currency", value: currency)
             baseURL.queryItems = [queryItem]
         case .sell(frstCurrency: let frstCurrency, scndCurrency: let scndCurrency):
-            let completePath: String = "/\(frstCurrency)-\(scndCurrency)/sell"
+            let completePath: String = "/prices/\(frstCurrency)-\(scndCurrency)/sell"
             baseURL.path += completePath
         case .buy(frstCurrency: let frstCurrency, scndCurrency: let scndCurrency):
-            let completePath: String = "/\(frstCurrency)-\(scndCurrency)/buy"
+            let completePath: String = "/prices/\(frstCurrency)-\(scndCurrency)/buy"
             baseURL.path += completePath
         }
         return baseURL.url

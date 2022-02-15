@@ -15,6 +15,8 @@ class ExchangeViewModel {
     var fetchingData: Observable<Bool> = Observable<Bool>(false)
     var didObtainError: Observable<Bool> = Observable<Bool>(false)
     
+    var route: Observable<Route> = Observable<Route>(.none)
+    
     init(crypto: Crypto) {
         self.crypto = crypto
     }
@@ -45,5 +47,10 @@ class ExchangeViewModel {
     
     func obtainViewTitle() -> String {
         return crypto.name
+    }
+    
+    func didSelectRowAt(index: Int) {
+        let data: ExchangeRateModel = exchangeData.value?[index] ?? ExchangeRateModel(currency: "", value: "")
+        route.value = Route.sellBuy(firstCurrency: crypto.abbreviation, secondCurrency: data.currency)
     }
 }

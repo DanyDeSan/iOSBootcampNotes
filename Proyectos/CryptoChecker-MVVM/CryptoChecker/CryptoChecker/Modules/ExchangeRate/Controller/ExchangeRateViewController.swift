@@ -38,6 +38,10 @@ class ExchangeRateViewController: UIViewController {
         viewModel.didObtainError.valueChanged = { [weak self] errorState in
             errorState ?? false ? self?.showErrorLabel() : self?.hideErrorLabel()
         }
+        viewModel.route.valueChanged = {[weak self] route in
+            guard let nextView: UIViewController = route?.viewController else { return }
+            self?.navigationController?.pushViewController(nextView, animated: true)
+        }
     }
     
     func showErrorLabel() {
@@ -76,6 +80,9 @@ class ExchangeRateViewController: UIViewController {
 
 extension ExchangeRateViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRowAt(index: indexPath.row)
+    }
 }
 
 extension ExchangeRateViewController: UITableViewDataSource {
