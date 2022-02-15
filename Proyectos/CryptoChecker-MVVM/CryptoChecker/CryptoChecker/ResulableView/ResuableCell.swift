@@ -43,6 +43,9 @@ class ReusableTableViewCell: UITableViewCell {
         
     }
     override func prepareForReuse() {
-        
+        self.nameLabel?.removeFromSuperview()
+        self.subtitleLabel?.removeFromSuperview()
+        self.nameLabel = nil
+        self.subtitleLabel = nil
     }
 }

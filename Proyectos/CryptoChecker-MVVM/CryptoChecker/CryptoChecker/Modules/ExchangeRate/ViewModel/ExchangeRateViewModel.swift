@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class ExchangeViewModel {
+    var crypto: Crypto
+    
+    init(crypto: Crypto) {
+        self.crypto = crypto
+    }
+    
+    init() {
+        self.crypto = Crypto(name: "NA", abbreviation: "NA")
+    }
+    
+}

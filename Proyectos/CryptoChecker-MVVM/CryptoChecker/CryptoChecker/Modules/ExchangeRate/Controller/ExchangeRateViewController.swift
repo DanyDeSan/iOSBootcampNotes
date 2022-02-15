@@ -8,6 +8,9 @@
 import UIKit
 
 class ExchangeRateViewController: UIViewController {
+    
+    private var viewModel: ExchangeViewModel = ExchangeViewModel()
+        
     lazy var exchangesTableView: UITableView = UITableView()
     var cryptoSelected: Crypto?
     var apiDataManager: APIDataManager<ExchangeRateURLResponse>?
@@ -33,6 +36,10 @@ class ExchangeRateViewController: UIViewController {
     func initUI() {
         
         
+    }
+    
+    func setViewModel(_ viewModel: ExchangeViewModel) {
+        self.viewModel = viewModel
     }
 }
 

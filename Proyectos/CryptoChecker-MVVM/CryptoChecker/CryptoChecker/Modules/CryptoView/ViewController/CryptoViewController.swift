@@ -11,10 +11,7 @@ class CryptoViewController: UIViewController {
     // Declarando una variable lazy, solo se crea cuando se usa.
     lazy var cryptoTableView: UITableView = UITableView()
     
-    lazy var apiDataManager: APIDataManager<CurrencyListResponse> = APIDataManager<CurrencyListResponse>(endpoint: .currencies)
-    
-    private lazy var viewModel: CryptoViewModelProtocol = CryptoViewModel(localDataManager: CryptoViewLocalDataManager())
-    private var availableCrypto: [Crypto] = [Crypto]()
+    private lazy var viewModel: CryptoViewModel = CryptoViewModel(localDataManager: CryptoViewLocalDataManager())
     
     
     override func viewDidLoad() {
@@ -35,20 +32,41 @@ class CryptoViewController: UIViewController {
         self.cryptoTableView.dataSource = self
         // EL .self despues del nombre de la clase, hace que pasemos como parametro el nombre de la clase
         self.cryptoTableView.register(ReusableTableViewCell.self, forCellReuseIdentifier: ReusableTableViewCell.reuseIdentifier)
+        // Add item button
+        let barButton: UIBarButtonItem = UIBarButtonItem(systemItem: .add, primaryAction: UIAction(handler: { action in
+            self.tabButtonPushed()
+        }), menu: nil)
+        self.navigationItem.setRightBarButton(barButton, animated: true)
     }
     
     func initViewModel() {
         viewModel.cryptoDataSource.valueChanged = { [weak self] cryptoDataSource in
-            self?.availableCrypto = cryptoDataSource ?? []
             self?.cryptoTableView.reloadData()
         }
         viewModel.obtainAvailableCryptos()
+        
+        viewModel.route.valueChanged = { [weak self] optionalRouter in
+            guard let self = self,
+                  let route: Route = optionalRouter,
+                  let nextViewController = route.viewController else { return }
+            // In case that the next view is a whole view controller
+            if case Route.exchangeView(crypto: _) = route {
+                self.navigationController?.pushViewController(nextViewController, animated: true)
+            } else { // In case that the next view is a alert
+                self.present(nextViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    private func tabButtonPushed() {
+        viewModel.didTappedBarButton()
     }
 }
 
 extension CryptoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        viewModel.didSelectCell(at: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -59,7 +77,7 @@ extension CryptoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return availableCrypto.count
+        return viewModel.obtainNumberOfAvailableCryptos()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,7 +87,7 @@ extension CryptoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: ReusableTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReusableTableViewCell.reuseIdentifier, for: indexPath) as? ReusableTableViewCell else { return UITableViewCell() }
         
-        let currency: Crypto = availableCrypto[indexPath.row]
+        let currency: Crypto = viewModel.obtainCrypto(at: indexPath.row)
         
         cell.initUI(model: currency)
         return cell

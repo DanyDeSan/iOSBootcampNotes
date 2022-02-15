@@ -8,11 +8,6 @@
 import Foundation
 import UIKit
 
-protocol CryptoViewModelProtocol {
-    var cryptoDataSource: Observable<[Crypto]> { get set }
-    func obtainAvailableCryptos()
-}
-
 protocol CryptoViewLocalDataManagerProtocol {
     func obtainAvailableCryptos() -> [Crypto]
 }

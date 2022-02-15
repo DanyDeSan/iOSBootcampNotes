@@ -38,7 +38,14 @@ class CryptoViewController: UIViewController {
 
 extension CryptoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        // Creamos siguiente vista
+        let nextView: ExchangeRateViewController = ExchangeRateViewController()
+        // Pasamos info de la crypto que vamos a mostrar
+        nextView.cryptoSelected = availableCrypto[indexPath.row]
+        // transicionamos
+        navigationController?.pushViewController(nextView, animated: true)
+        // Deseleccionamos la celda
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

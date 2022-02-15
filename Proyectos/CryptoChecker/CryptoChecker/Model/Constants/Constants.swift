@@ -10,4 +10,5 @@ import Foundation
 struct Constants {
     
     static let currencyViewTitle: String = "Currency View"
+    
 }

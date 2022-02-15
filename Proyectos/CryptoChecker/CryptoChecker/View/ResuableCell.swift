@@ -42,7 +42,12 @@ class ReusableTableViewCell: UITableViewCell {
         self.subtitleLabel?.applyRedStyle()
         
     }
+    
     override func prepareForReuse() {
-        
+        super.prepareForReuse()
+        nameLabel?.removeFromSuperview()
+        subtitleLabel?.removeFromSuperview()
+        nameLabel = nil
+        subtitleLabel = nil
     }
 }
