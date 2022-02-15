@@ -12,30 +12,61 @@ class ExchangeRateViewController: UIViewController {
     private var viewModel: ExchangeViewModel = ExchangeViewModel()
         
     lazy var exchangesTableView: UITableView = UITableView()
-    var cryptoSelected: Crypto?
-    var apiDataManager: APIDataManager<ExchangeRateURLResponse>?
-    var exchangeData: [ExchangeRateModel]?
     
     lazy var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    lazy var errorLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.applyBackgroundColor()
+        title = viewModel.obtainViewTitle()
+        initViewModel()
+        viewModel.requestInfo()
     }
     
-    func requestInfo() {
-        
+    func initViewModel() {
+        viewModel.fetchingData.valueChanged = { [weak self] isFetchig in
+            if isFetchig ?? false {
+                self?.initActivityView()
+            } else {
+                self?.removeActivityView()
+            }
+        }
+        viewModel.exchangeData.valueChanged = { [weak self] _ in
+            self?.initUI()
+        }
+        viewModel.didObtainError.valueChanged = { [weak self] errorState in
+            errorState ?? false ? self?.showErrorLabel() : self?.hideErrorLabel()
+        }
+    }
+    
+    func showErrorLabel() {
+        view.addSubview(errorLabel)
+        errorLabel.text = Constants.errorlabel
+        errorLabel.centerInView(with: view)
+    }
+    
+    func hideErrorLabel() {
+        errorLabel.removeFromSuperview()
     }
     
     func initActivityView() {
-        
+        view.addSubview(activityIndicator)
+        activityIndicator.pinToBorders(with: view)
+        activityIndicator.startAnimating()
     }
     
     func removeActivityView() {
-        
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
     }
+    
     func initUI() {
-        
-        
+        view.addSubview(exchangesTableView)
+        exchangesTableView.pinToBorders(with: view)
+        exchangesTableView.register(ReusableTableViewCell.self, forCellReuseIdentifier: ReusableTableViewCell.reuseIdentifier)
+        exchangesTableView.delegate = self
+        exchangesTableView.dataSource = self
     }
     
     func setViewModel(_ viewModel: ExchangeViewModel) {
@@ -56,10 +87,15 @@ extension ExchangeRateViewController: UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.obtainNumberOfResults()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let viewCell: ReusableTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReusableTableViewCell.reuseIdentifier, for: indexPath) as? ReusableTableViewCell else {
+                  return UITableViewCell()
+              }
+        let exchange: ExchangeRateModel = viewModel.obtainModelAtIndex(index: indexPath.row)
+        viewCell.initUI(model: exchange)
+        return viewCell
     }
 }

@@ -13,6 +13,6 @@ final class CryptoViewLocalDataManager: CryptoViewLocalDataManagerProtocol {
     func obtainAvailableCryptos() -> [Crypto] {
         return [Crypto(name: "Bitcoin", abbreviation: "BTC"),
                 Crypto(name: "Ethereum", abbreviation: "ETH"),
-                Crypto(name: "Ripple", abbreviation: "XTH")]
+                Crypto(name: "Ripple", abbreviation: "XRP")]
     }
 }

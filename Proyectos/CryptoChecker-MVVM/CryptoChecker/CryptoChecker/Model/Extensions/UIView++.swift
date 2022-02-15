@@ -18,6 +18,12 @@ extension UIView {
         rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
+    func centerInView(with view: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
     static var padding: CGFloat = 10
     
     func applyBackgroundColor() {
