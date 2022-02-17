@@ -50,6 +50,7 @@ En caso de que al intentar hacer un PR aparecen conflictos pueden hacer lo sigui
 4. Abrir los archivos que están marcados con 'CONFLICT' y ubicar las partes de código que git marca como conflicto.
 
 La recomendación que les doy para resolver conflictos es procurar aplicar los cambios que provienen de la rama `main` y luego aplicar nuevamente los cambios que uno hizo. De esta manera evitamos que el trabajo de los demás se pierda, y tenemos la ventaja que conocemos los cambios que hicimos.
+
 5. Una vez que hayamos terminado de resolver los conflictos. Compilar nuevamente todo para asegurarse de que todo está en orden (en este caso probar el playground). 
 6. Agregar todos los archivos resueltos con `git add`.
 7. Aplicar el comando `git rebase --continue` para continuar con el rebase
