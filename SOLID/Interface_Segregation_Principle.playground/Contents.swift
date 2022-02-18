@@ -6,3 +6,8 @@ import UIKit
 //Por ejemplo, podemos crear una interfaz para animales que incluya métodos de desplazamiento:
 //
 
+protocol AnimalProtocol {
+    func walk()
+    func swimm()
+    func fly()
+}
