@@ -11,3 +11,67 @@ protocol AnimalProtocol {
     func swimm()
     func fly()
 }
+
+struct Wale: AnimalProtocol{
+    func walk() {
+        
+    }
+    
+    func swimm() {
+        <#code#>
+    }
+    
+    func fly() {
+        <#code#>
+    }
+    
+}
+
+protocol WalkProtocol {
+    func walk()
+}
+protocol SwimmProtocol {
+    func swimm()
+}
+protocol FlyProtocol {
+    func fly()
+}
+
+struct NewWale: SwimmProtocol{
+    func swimm() {
+        print("i swimm in the sea")
+    }
+}
+
+struct Cocodrile: SwimmProtocol, WalkProtocol{
+    func swimm() {
+        print("i swimm ")
+    }
+        
+    func walk() {
+        print("i walk too")
+    }
+    
+    
+}
+
+struct Pelican: WalkProtocol, SwimmProtocol, FlyProtocol {
+    func walk() {
+        print("i walk")
+    }
+    
+    func swimm() {
+        print("i swimm")
+    }
+    
+    func fly() {
+        print("i fly too")
+    }
+    
+    
+}
+
+var pelican = Pelican()
+pelican.walk()
+pelican.swimm()
+pelican.fly()
