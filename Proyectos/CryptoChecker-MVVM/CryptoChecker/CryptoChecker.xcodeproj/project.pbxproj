@@ -106,9 +106,9 @@
 		8A1868A827B64D9000C12D0E /* CryptoChecker */ = {
 			isa = PBXGroup;
 			children = (
-				8A5F058C27BAED310015DC82 /* Modules */,
 				8A1868A927B64D9000C12D0E /* AppDelegate.swift */,
 				8A1868AB27B64D9000C12D0E /* SceneDelegate.swift */,
+				8A5F058C27BAED310015DC82 /* Modules */,
 				8A5F058527BACFD00015DC82 /* Helpers */,
 				8A8F267227B667E500CD5C61 /* Model Layer */,
 				8A8F267127B667DA00CD5C61 /* ResulableView */,
