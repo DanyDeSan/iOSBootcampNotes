@@ -9,22 +9,27 @@ import Foundation
 
 
 // The view model should not use UIKit!
-final class CryptoViewModel {
+final class CryptoViewModel: CryptoViewModelProtocol {
     
     
     // Local data manager
     var localDataManager: CryptoViewLocalDataManagerProtocol
     
     // Observable variables
-    var cryptoDataSource: Observable<[Crypto]> = Observable<[Crypto]>([Crypto]())
-    
-    var route: Observable<Route> = Observable<Route>(.none)
-    
+    var cryptoDataSource: Observable<[Crypto]>
+    var route: Observable<Route>
     var newCryptoCurrency: Observable<Crypto>?
     
-    init(localDataManager: CryptoViewLocalDataManagerProtocol) {
+    init(localDataManager: CryptoViewLocalDataManagerProtocol,
+         route: Observable<Route>,
+         newCryptoCurrency: Observable<Crypto>,
+         cryptoDataSource: Observable<[Crypto]> ) {
         self.localDataManager = localDataManager
+        self.route = route
+        self.newCryptoCurrency = newCryptoCurrency
+        self.cryptoDataSource = cryptoDataSource
     }
+    
     
     func obtainAvailableCryptos() {
         let crypto: [Crypto] = localDataManager.obtainAvailableCryptos()

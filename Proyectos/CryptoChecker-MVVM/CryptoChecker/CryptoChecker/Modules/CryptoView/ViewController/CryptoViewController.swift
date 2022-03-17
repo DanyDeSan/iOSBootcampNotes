@@ -11,13 +11,17 @@ class CryptoViewController: UIViewController {
     // Declarando una variable lazy, solo se crea cuando se usa.
     lazy var cryptoTableView: UITableView = UITableView()
     
-    private lazy var viewModel: CryptoViewModel = CryptoViewModel(localDataManager: CryptoViewLocalDataManager())
+    var viewModel: CryptoViewModelProtocol?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
         initViewModel()
+    }
+    
+    func set(viewModel: CryptoViewModelProtocol) {
+        self.viewModel = viewModel
     }
     
     func initUI() {
@@ -40,12 +44,12 @@ class CryptoViewController: UIViewController {
     }
     
     func initViewModel() {
-        viewModel.cryptoDataSource.valueChanged = { [weak self] cryptoDataSource in
+        viewModel?.cryptoDataSource.valueChanged = { [weak self] cryptoDataSource in
             self?.cryptoTableView.reloadData()
         }
-        viewModel.obtainAvailableCryptos()
+        viewModel?.obtainAvailableCryptos()
         
-        viewModel.route.valueChanged = { [weak self] optionalRouter in
+        viewModel?.route.valueChanged = { [weak self] optionalRouter in
             guard let self = self,
                   let route: Route = optionalRouter,
                   let nextViewController = route.viewController else { return }
@@ -59,13 +63,13 @@ class CryptoViewController: UIViewController {
     }
     
     private func tabButtonPushed() {
-        viewModel.didTappedBarButton()
+        viewModel?.didTappedBarButton()
     }
 }
 
 extension CryptoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectCell(at: indexPath.row)
+        viewModel?.didSelectCell(at: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -77,7 +81,7 @@ extension CryptoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.obtainNumberOfAvailableCryptos()
+        return viewModel?.obtainNumberOfAvailableCryptos() ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -87,7 +91,7 @@ extension CryptoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: ReusableTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReusableTableViewCell.reuseIdentifier, for: indexPath) as? ReusableTableViewCell else { return UITableViewCell() }
         
-        let currency: Crypto = viewModel.obtainCrypto(at: indexPath.row)
+        let currency: Crypto = viewModel?.obtainCrypto(at: indexPath.row) ?? Crypto(name: "", abbreviation: "")
         
         cell.initUI(model: currency)
         return cell

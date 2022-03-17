@@ -29,6 +29,9 @@
 		8A8F267A27B6723D00CD5C61 /* APIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267927B6723D00CD5C61 /* APIDataManager.swift */; };
 		8A8F267C27B6728800CD5C61 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267B27B6728800CD5C61 /* Endpoint.swift */; };
 		8A8F267F27B677A600CD5C61 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8F267E27B677A600CD5C61 /* DataParser.swift */; };
+		8AB6161527E2C9C800C38AC7 /* ExchangeRateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6161427E2C9C800C38AC7 /* ExchangeRateProtocols.swift */; };
+		8AB6161727E2C9ED00C38AC7 /* BuySellViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6161627E2C9ED00C38AC7 /* BuySellViewProtocols.swift */; };
+		8AB6161927E2D48B00C38AC7 /* FakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6161827E2D48B00C38AC7 /* FakeViewModel.swift */; };
 		8AE858F827B6E38100BC1122 /* ResuableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858F727B6E38100BC1122 /* ResuableCell.swift */; };
 		8AE858FA27B6EB8200BC1122 /* UILabel++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858F927B6EB8200BC1122 /* UILabel++.swift */; };
 		8AE858FC27B6EBA500BC1122 /* UIColor++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE858FB27B6EBA500BC1122 /* UIColor++.swift */; };
@@ -65,6 +68,9 @@
 		8A8F267927B6723D00CD5C61 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
 		8A8F267B27B6728800CD5C61 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8A8F267E27B677A600CD5C61 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
+		8AB6161427E2C9C800C38AC7 /* ExchangeRateProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateProtocols.swift; sourceTree = "<group>"; };
+		8AB6161627E2C9ED00C38AC7 /* BuySellViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellViewProtocols.swift; sourceTree = "<group>"; };
+		8AB6161827E2D48B00C38AC7 /* FakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewModel.swift; sourceTree = "<group>"; };
 		8AE858F727B6E38100BC1122 /* ResuableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuableCell.swift; sourceTree = "<group>"; };
 		8AE858F927B6EB8200BC1122 /* UILabel++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel++.swift"; sourceTree = "<group>"; };
 		8AE858FB27B6EBA500BC1122 /* UIColor++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor++.swift"; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				8A5F058127BACFB30015DC82 /* CryptoViewModel.swift */,
+				8AB6161827E2D48B00C38AC7 /* FakeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 		8A5F059027BAEDB80015DC82 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				8AB6161427E2C9C800C38AC7 /* ExchangeRateProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -209,6 +217,7 @@
 		8A73509927BBA08D00A022C7 /* BuySellView */ = {
 			isa = PBXGroup;
 			children = (
+				8AB6161327E2C96B00C38AC7 /* Protocol */,
 				8A73509B27BBA0B200A022C7 /* ViewModel */,
 				8A73509A27BBA0AC00A022C7 /* ViewController */,
 			);
@@ -279,6 +288,14 @@
 				8AE858FB27B6EBA500BC1122 /* UIColor++.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8AB6161327E2C96B00C38AC7 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8AB6161627E2C9ED00C38AC7 /* BuySellViewProtocols.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		8AE858FD27B6EC9F00BC1122 /* Responses */ = {
@@ -394,8 +411,10 @@
 				8AE8590627B6F1A800BC1122 /* TableViewCellVieable.swift in Sources */,
 				8AE858F827B6E38100BC1122 /* ResuableCell.swift in Sources */,
 				8A1868AE27B64D9000C12D0E /* CryptoViewController.swift in Sources */,
+				8AB6161527E2C9C800C38AC7 /* ExchangeRateProtocols.swift in Sources */,
 				8A5F058227BACFB30015DC82 /* CryptoViewModel.swift in Sources */,
 				8A5F059227BAEE830015DC82 /* CryptoViewProtocols.swift in Sources */,
+				8AB6161727E2C9ED00C38AC7 /* BuySellViewProtocols.swift in Sources */,
 				8A8F267F27B677A600CD5C61 /* DataParser.swift in Sources */,
 				8A7350A127BBA1EF00A022C7 /* SellBuyResponse.swift in Sources */,
 				8A73509627BB9A5600A022C7 /* RateView.swift in Sources */,
@@ -403,6 +422,7 @@
 				8A73509F27BBA10A00A022C7 /* BuySellViewModel.swift in Sources */,
 				8A5F059827BB0BFC0015DC82 /* Route.swift in Sources */,
 				8A73509D27BBA0F100A022C7 /* BuySellViewController.swift in Sources */,
+				8AB6161927E2D48B00C38AC7 /* FakeViewModel.swift in Sources */,
 				8AE8590827B6F51C00BC1122 /* ExchangeRateViewController.swift in Sources */,
 				8AE8590A27B6F8E100BC1122 /* ExchangeRatesResponse.swift in Sources */,
 				8A1868AA27B64D9000C12D0E /* AppDelegate.swift in Sources */,
