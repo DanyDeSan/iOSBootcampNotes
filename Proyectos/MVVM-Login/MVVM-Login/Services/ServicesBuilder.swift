@@ -85,15 +85,24 @@ class ServiceBuilder: ServicesBuilderProtocol {
     func createService() -> URLSessionDataTask? {
         guard let currentEndpoint: Endpoint = currentEndpoint,
               var url: URL = self.urlBase else { return nil }
+        // Aqui agrego el enpoint a nuestra URL base
         url.appendPathComponent(currentEndpoint.path)
+        // Creamos el request usando la url base
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
+        // Agregando headers
         request.addValue("application/vnd.api+json", forHTTPHeaderField: "Accept")
         request.addValue("application/vnd.api+json", forHTTPHeaderField: "Content-Type")
+        // Agregar header de autenticación, en caso de que se tenga un beaerer token.
+        // El bearer token es la llave para que nos identifiquemos con
+        // el servicio.
         if let bearer: String = obtainBearer() {
             request.addValue(bearer, forHTTPHeaderField: "Authorization")
         }
+        // Si es de tipo GET o POST
         request.httpMethod = currentEndpoint.method
+        // Aqui codificamos los parametros que se le van a enviar a la API
         request.httpBody = obtainParameters()
+        // data task
         let dataTask: URLSessionDataTask = session.dataTask(with: request) {[weak self] data, response, error in
             guard let response = response as? HTTPURLResponse else {
                 self?.completionHandler?(.fail(.unrecognized, error))

@@ -10,6 +10,13 @@
 		8A4F1C1127E116270044EA08 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1C1027E116270044EA08 /* ResponseParser.swift */; };
 		8A4F1C1427E1192E0044EA08 /* LoginRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1C1327E1192E0044EA08 /* LoginRO.swift */; };
 		8A4F1C2227E1D9840044EA08 /* UserRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1C2127E1D9840044EA08 /* UserRO.swift */; };
+		8AB6162127E42AF800C38AC7 /* MVVM_LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6162027E42AF800C38AC7 /* MVVM_LoginTests.swift */; };
+		8AB6162B27E438E000C38AC7 /* LogInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6162A27E438E000C38AC7 /* LogInViewModelTests.swift */; };
+		8AB6162D27E4390600C38AC7 /* LogInViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6162C27E4390600C38AC7 /* LogInViewControllerTest.swift */; };
+		8AB6162F27E4393C00C38AC7 /* UserDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6162E27E4393C00C38AC7 /* UserDetailViewModelTests.swift */; };
+		8AB6163127E4395100C38AC7 /* UserDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6163027E4395100C38AC7 /* UserDetailViewControllerTests.swift */; };
+		8AB6163327E4396800C38AC7 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6163227E4396800C38AC7 /* SignInViewModelTests.swift */; };
+		8AB6163527E4397800C38AC7 /* SignInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6163427E4397800C38AC7 /* SignInViewControllerTests.swift */; };
 		8ACAEBFA27E250A100264475 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACAEBF927E250A100264475 /* NetworkError.swift */; };
 		8ACAEBFC27E252B300264475 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACAEBFB27E252B300264475 /* Response.swift */; };
 		8AEE6ECA27E07B81004F5563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEE6EC927E07B81004F5563 /* AppDelegate.swift */; };
@@ -37,10 +44,28 @@
 		8AEE6F0A27E092E5004F5563 /* RegisterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEE6F0927E092E5004F5563 /* RegisterDTO.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8AB6162227E42AF800C38AC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AEE6EBE27E07B81004F5563 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AEE6EC527E07B81004F5563;
+			remoteInfo = "MVVM-Login";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		8A4F1C1027E116270044EA08 /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
 		8A4F1C1327E1192E0044EA08 /* LoginRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRO.swift; sourceTree = "<group>"; };
 		8A4F1C2127E1D9840044EA08 /* UserRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRO.swift; sourceTree = "<group>"; };
+		8AB6161E27E42AF800C38AC7 /* MVVM-LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM-LoginTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AB6162027E42AF800C38AC7 /* MVVM_LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_LoginTests.swift; sourceTree = "<group>"; };
+		8AB6162A27E438E000C38AC7 /* LogInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModelTests.swift; sourceTree = "<group>"; };
+		8AB6162C27E4390600C38AC7 /* LogInViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewControllerTest.swift; sourceTree = "<group>"; };
+		8AB6162E27E4393C00C38AC7 /* UserDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModelTests.swift; sourceTree = "<group>"; };
+		8AB6163027E4395100C38AC7 /* UserDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		8AB6163227E4396800C38AC7 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
+		8AB6163427E4397800C38AC7 /* SignInViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerTests.swift; sourceTree = "<group>"; };
 		8ACAEBF927E250A100264475 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		8ACAEBFB27E252B300264475 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8AEE6EC627E07B81004F5563 /* MVVM-Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Login.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +96,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8AB6161B27E42AF800C38AC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AEE6EC327E07B81004F5563 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +123,44 @@
 			path = ResponseObjects;
 			sourceTree = "<group>";
 		};
+		8AB6161F27E42AF800C38AC7 /* MVVM-LoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AB6162827E4387700C38AC7 /* LogInModuleTests */,
+				8AB6162927E4388400C38AC7 /* UserDetailModuleTests */,
+				8AB6162727E4386900C38AC7 /* SignInModuleTests */,
+				8AB6162027E42AF800C38AC7 /* MVVM_LoginTests.swift */,
+			);
+			path = "MVVM-LoginTests";
+			sourceTree = "<group>";
+		};
+		8AB6162727E4386900C38AC7 /* SignInModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AB6163227E4396800C38AC7 /* SignInViewModelTests.swift */,
+				8AB6163427E4397800C38AC7 /* SignInViewControllerTests.swift */,
+			);
+			path = SignInModuleTests;
+			sourceTree = "<group>";
+		};
+		8AB6162827E4387700C38AC7 /* LogInModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AB6162A27E438E000C38AC7 /* LogInViewModelTests.swift */,
+				8AB6162C27E4390600C38AC7 /* LogInViewControllerTest.swift */,
+			);
+			path = LogInModuleTests;
+			sourceTree = "<group>";
+		};
+		8AB6162927E4388400C38AC7 /* UserDetailModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AB6162E27E4393C00C38AC7 /* UserDetailViewModelTests.swift */,
+				8AB6163027E4395100C38AC7 /* UserDetailViewControllerTests.swift */,
+			);
+			path = UserDetailModuleTests;
+			sourceTree = "<group>";
+		};
 		8ACAEBF827E2509000264475 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				8AEE6EC827E07B81004F5563 /* MVVM-Login */,
+				8AB6161F27E42AF800C38AC7 /* MVVM-LoginTests */,
 				8AEE6EC727E07B81004F5563 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				8AEE6EC627E07B81004F5563 /* MVVM-Login.app */,
+				8AB6161E27E42AF800C38AC7 /* MVVM-LoginTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +280,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8AB6161D27E42AF800C38AC7 /* MVVM-LoginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AB6162627E42AF800C38AC7 /* Build configuration list for PBXNativeTarget "MVVM-LoginTests" */;
+			buildPhases = (
+				8AB6161A27E42AF800C38AC7 /* Sources */,
+				8AB6161B27E42AF800C38AC7 /* Frameworks */,
+				8AB6161C27E42AF800C38AC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AB6162327E42AF800C38AC7 /* PBXTargetDependency */,
+			);
+			name = "MVVM-LoginTests";
+			productName = "MVVM-LoginTests";
+			productReference = 8AB6161E27E42AF800C38AC7 /* MVVM-LoginTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8AEE6EC527E07B81004F5563 /* MVVM-Login */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AEE6EDA27E07B82004F5563 /* Build configuration list for PBXNativeTarget "MVVM-Login" */;
@@ -235,6 +325,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					8AB6161D27E42AF800C38AC7 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 8AEE6EC527E07B81004F5563;
+					};
 					8AEE6EC527E07B81004F5563 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -254,11 +348,19 @@
 			projectRoot = "";
 			targets = (
 				8AEE6EC527E07B81004F5563 /* MVVM-Login */,
+				8AB6161D27E42AF800C38AC7 /* MVVM-LoginTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8AB6161C27E42AF800C38AC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AEE6EC427E07B81004F5563 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +373,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8AB6161A27E42AF800C38AC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AB6162B27E438E000C38AC7 /* LogInViewModelTests.swift in Sources */,
+				8AB6163527E4397800C38AC7 /* SignInViewControllerTests.swift in Sources */,
+				8AB6162127E42AF800C38AC7 /* MVVM_LoginTests.swift in Sources */,
+				8AB6162F27E4393C00C38AC7 /* UserDetailViewModelTests.swift in Sources */,
+				8AB6163127E4395100C38AC7 /* UserDetailViewControllerTests.swift in Sources */,
+				8AB6163327E4396800C38AC7 /* SignInViewModelTests.swift in Sources */,
+				8AB6162D27E4390600C38AC7 /* LogInViewControllerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AEE6EC227E07B81004F5563 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +422,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8AB6162327E42AF800C38AC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AEE6EC527E07B81004F5563 /* MVVM-Login */;
+			targetProxy = 8AB6162227E42AF800C38AC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		8AEE6ED427E07B82004F5563 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -318,6 +442,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8AB6162427E42AF800C38AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RRULW6ZM98;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ArtificialDream.MVVM-LoginTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM-Login.app/MVVM-Login";
+			};
+			name = Debug;
+		};
+		8AB6162527E42AF800C38AC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RRULW6ZM98;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ArtificialDream.MVVM-LoginTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM-Login.app/MVVM-Login";
+			};
+			name = Release;
+		};
 		8AEE6ED827E07B82004F5563 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -491,6 +651,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8AB6162627E42AF800C38AC7 /* Build configuration list for PBXNativeTarget "MVVM-LoginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AB6162427E42AF800C38AC7 /* Debug */,
+				8AB6162527E42AF800C38AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8AEE6EC127E07B81004F5563 /* Build configuration list for PBXProject "MVVM-Login" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
