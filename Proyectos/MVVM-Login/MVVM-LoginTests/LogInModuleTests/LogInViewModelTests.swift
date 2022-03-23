@@ -10,27 +10,84 @@ import XCTest
 
 class LogInViewModelTests: XCTestCase {
 
+    // System under test
+    var sut: LoginViewModelProtocol?
+    // Spy objects
+    var apiDataManagerSpy: LoginModuleAPIDataManagerSpy?
+    var localDataManagerSpy: LoginModuleLocalDataManagerSpy?
+    var viewControllerSpy: LoginViewControllerSpy?
+    
+    // Esta funcion siempre se llama antes de cada test
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // Creamos los spys
+        apiDataManagerSpy = LoginModuleAPIDataManagerSpy()
+        localDataManagerSpy = LoginModuleLocalDataManagerSpy()
+        viewControllerSpy = LoginViewControllerSpy()
+        // Creamos el sut
+        sut = LoginViewModel()
+        // Inyección de dependencias al sut
+        sut?.loginAPIDataManager = apiDataManagerSpy
+        sut?.loginLocalDataManager = localDataManagerSpy
+        sut?.loginViewController = viewControllerSpy
     }
 
+    // Esta funcion siempre se llama después de cada test
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        apiDataManagerSpy = nil
+        localDataManagerSpy = nil
+        viewControllerSpy = nil
+        sut = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testOnButtonLogin_shouldSuccess() throws {
+        // Given
+        // Aqui establecemos los parametros del escenario incial
+        let userMail: String = "aslkd"
+        let counterSign: String = "asdlñkf"
+        // When
+        // Aqui accionamos lo que vamos a probar
+        sut?.tapOnLoginButtonWithInputs(countersign: counterSign, userEmail: userMail)
+        // Then
+        let apiDataManagerSpy = try XCTUnwrap(apiDataManagerSpy)
+        XCTAssert(apiDataManagerSpy.didPerformLogin)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testOnButtonLogin_wihtoutUserMail_shouldFail() throws {
+        // Given
+        // Aqui establecemos los parametros del escenario incial
+        let userMail: String? = nil
+        let counterSign: String = ""
+        // When
+        // Aqui accionamos lo que vamos a probar
+        sut?.tapOnLoginButtonWithInputs(countersign: counterSign, userEmail: userMail)
+        // Then
+        let apiDataManagerSpy = try XCTUnwrap(apiDataManagerSpy)
+        XCTAssertFalse(apiDataManagerSpy.didPerformLogin)
+        
+    }
+    
+    func testOnButtonLogin_wihtoutCountersign_shouldFail() throws {
+        // Given
+        // Aqui establecemos los parametros del escenario incial
+        let userMail: String? = ""
+        let counterSign: String? = nil
+        // When
+        // Aqui accionamos lo que vamos a probar
+        sut?.tapOnLoginButtonWithInputs(countersign: counterSign, userEmail: userMail)
+        // Then
+        let apiDataManagerSpy = try XCTUnwrap(apiDataManagerSpy)
+        XCTAssertFalse(apiDataManagerSpy.didPerformLogin)
+        
+    }
+    
+    func testOnButtonSignIn_shouldSucceed() throws {
+        //Given
+        
+        //When
+        sut?.tapOnSignInButton()
+        //Then
+        let viewController = try XCTUnwrap(viewControllerSpy)
+        XCTAssert(viewController.didCalledContinueToSignInView)
     }
 
 }

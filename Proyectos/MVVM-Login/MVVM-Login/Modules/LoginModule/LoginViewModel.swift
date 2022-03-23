@@ -22,6 +22,10 @@ class LoginViewModel: LoginViewModelProtocol {
             let user = userEmail else {
             return
         }
+        guard countersign != "",
+              user != "" else {
+            return
+        }
         loginAPIDataManager?.viewModel = self
         loginAPIDataManager?.performLogin(userEmail: user, countersign: countersign)
     }

@@ -9,7 +9,7 @@ import UIKit
 
 class ExchangeRateViewController: UIViewController {
     
-    private var viewModel: ExchangeViewModel = ExchangeViewModel()
+    private var viewModel: ExchangeRateViewModelProtocol = ExchangeViewModel()
         
     lazy var exchangesTableView: UITableView = UITableView()
     

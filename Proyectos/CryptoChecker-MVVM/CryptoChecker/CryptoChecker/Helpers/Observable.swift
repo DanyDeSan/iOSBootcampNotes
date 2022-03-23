@@ -8,12 +8,19 @@
 import Foundation
 
 class Observable<ObservedType> {
+    // En esta variable guardamos el valor
     private var _value: ObservedType?
+    // En esta variable computable detectamos cuando recibimos un
+    // nuevo valor y accionamos el closure
+    // Y tambien nos sirve para consultar el valor que previamente habíamos
+    // obtenido
     var value: ObservedType? {
         get {
             return _value
         }
         set {
+            // NewValue es una variable que ya viene definida
+            // que contiene el valor nuevo que vamos a asignar
             _value = newValue
             valueChanged?(_value)
         }

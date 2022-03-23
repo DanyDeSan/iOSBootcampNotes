@@ -33,7 +33,12 @@ enum Route {
     
     // Aqui se crea el modulo de de exchange rate, aquí se inyectand las dependencias del modulo.
     private func instantiateExchangeViewModule(crypto: Crypto) -> UIViewController {
-        let viewModel: ExchangeViewModel = ExchangeViewModel(crypto: crypto)
+        let fetchingData: Observable<Bool> = Observable<Bool>(false)
+        let exchangeData: Observable<[ExchangeRateModel]> = Observable<[ExchangeRateModel]>([])
+        let route: Observable<Route> = Observable<Route>(.none)
+        let didObtainError: Observable<Bool> = Observable<Bool>(false)
+        
+        let viewModel: ExchangeViewModel = ExchangeViewModel(crypto: crypto, exchangeData: exchangeData, fetchingData: fetchingData, didObtainError: didObtainError, route: route)
         let viewController: ExchangeRateViewController = ExchangeRateViewController()
          viewController.setViewModel(viewModel)
         return viewController

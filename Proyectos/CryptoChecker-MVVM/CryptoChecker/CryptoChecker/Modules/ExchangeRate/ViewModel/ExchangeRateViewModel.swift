@@ -7,22 +7,35 @@
 
 import Foundation
 
-class ExchangeViewModel {
+class ExchangeViewModel: ExchangeRateViewModelProtocol {
+    
     var crypto: Crypto
     
     var apiDataManager: APIDataManager<ExchangeRateURLResponse>?
-    var exchangeData: Observable<[ExchangeRateModel]> = Observable<[ExchangeRateModel]>([])
-    var fetchingData: Observable<Bool> = Observable<Bool>(false)
-    var didObtainError: Observable<Bool> = Observable<Bool>(false)
+    var exchangeData: Observable<[ExchangeRateModel]>
+    var fetchingData: Observable<Bool>
+    var didObtainError: Observable<Bool>
     
     var route: Observable<Route> = Observable<Route>(.none)
     
-    init(crypto: Crypto) {
+    init(crypto: Crypto,
+         exchangeData: Observable<[ExchangeRateModel]>,
+         fetchingData: Observable<Bool>,
+         didObtainError: Observable<Bool>,
+         route: Observable<Route> ) {
         self.crypto = crypto
+        self.exchangeData = exchangeData
+        self.fetchingData = fetchingData
+        self.didObtainError = didObtainError
+        self.route = route
     }
     
     init() {
         self.crypto = Crypto(name: "NA", abbreviation: "NA")
+        self.exchangeData = Observable<[ExchangeRateModel]>([])
+        self.fetchingData = Observable<Bool>(false)
+        self.didObtainError = Observable<Bool>(false)
+        self.route = Observable<Route>(.none)
     }
     
     func requestInfo() {
