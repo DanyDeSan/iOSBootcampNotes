@@ -13,6 +13,7 @@
 		8A63C68A27E5812A00C49A57 /* LoginModuleAPIDataManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63C68927E5812A00C49A57 /* LoginModuleAPIDataManagerSpy.swift */; };
 		8A63C68C27E5828300C49A57 /* LoginViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63C68B27E5828300C49A57 /* LoginViewControllerSpy.swift */; };
 		8A63C68E27E5840300C49A57 /* LoginModuleLocalDataManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A63C68D27E5840300C49A57 /* LoginModuleLocalDataManagerSpy.swift */; };
+		8AA4FCA127EAB513004D0125 /* LoginViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4FCA027EAB513004D0125 /* LoginViewModelSpy.swift */; };
 		8AB6162127E42AF800C38AC7 /* MVVM_LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6162027E42AF800C38AC7 /* MVVM_LoginTests.swift */; };
 		8AB6162B27E438E000C38AC7 /* LogInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6162A27E438E000C38AC7 /* LogInViewModelTests.swift */; };
 		8AB6162D27E4390600C38AC7 /* LogInViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB6162C27E4390600C38AC7 /* LogInViewControllerTest.swift */; };
@@ -64,6 +65,7 @@
 		8A63C68927E5812A00C49A57 /* LoginModuleAPIDataManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleAPIDataManagerSpy.swift; sourceTree = "<group>"; };
 		8A63C68B27E5828300C49A57 /* LoginViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSpy.swift; sourceTree = "<group>"; };
 		8A63C68D27E5840300C49A57 /* LoginModuleLocalDataManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleLocalDataManagerSpy.swift; sourceTree = "<group>"; };
+		8AA4FCA027EAB513004D0125 /* LoginViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpy.swift; sourceTree = "<group>"; };
 		8AB6161E27E42AF800C38AC7 /* MVVM-LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM-LoginTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB6162027E42AF800C38AC7 /* MVVM_LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_LoginTests.swift; sourceTree = "<group>"; };
 		8AB6162A27E438E000C38AC7 /* LogInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModelTests.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				8A63C68927E5812A00C49A57 /* LoginModuleAPIDataManagerSpy.swift */,
 				8A63C68B27E5828300C49A57 /* LoginViewControllerSpy.swift */,
 				8A63C68D27E5840300C49A57 /* LoginModuleLocalDataManagerSpy.swift */,
+				8AA4FCA027EAB513004D0125 /* LoginViewModelSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A63C68E27E5840300C49A57 /* LoginModuleLocalDataManagerSpy.swift in Sources */,
+				8AA4FCA127EAB513004D0125 /* LoginViewModelSpy.swift in Sources */,
 				8AB6162B27E438E000C38AC7 /* LogInViewModelTests.swift in Sources */,
 				8AB6163527E4397800C38AC7 /* SignInViewControllerTests.swift in Sources */,
 				8AB6162127E42AF800C38AC7 /* MVVM_LoginTests.swift in Sources */,

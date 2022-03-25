@@ -89,5 +89,17 @@ class LogInViewModelTests: XCTestCase {
         let viewController = try XCTUnwrap(viewControllerSpy)
         XCTAssert(viewController.didCalledContinueToSignInView)
     }
+    
+    func testSetViewControllerConnection() throws {
+        // Given
+        // En este caso hcemos que el view controller sea null para que la prueba
+        // tenga sentido
+        sut?.loginViewController = nil
+        let viewController: LoginViewControllerSpy = LoginViewControllerSpy()
+        // When
+        sut?.setViewControllerConnection(viewController: viewController)
+        // Then
+        XCTAssertNotNil(sut?.loginViewController)
+    }
 
 }
