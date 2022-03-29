@@ -52,6 +52,12 @@ class SignInViewController: UIViewController {
         return textField
     }()
     
+    private var birthDateField: UITextField = {
+        let textField = UITextField(frame: CGRect.zero)
+        textField.placeholder = "Birthday"
+        return textField
+    }
+    
     private var contentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -118,3 +124,5 @@ extension SignInViewController: SignInViewControllerProtocol {
         self.dismiss(animated: true, completion: nil)
     }
 }
+
+extension 
